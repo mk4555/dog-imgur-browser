@@ -1,7 +1,6 @@
 import React from 'react';
 import Navbar from './Navbar'
 import { BrowserRouter as Router, NavLink, Route } from 'react-router-dom';
-import '../styles/App.css'
 
 const App = (props) =>
   <Router>
