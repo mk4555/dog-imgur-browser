@@ -10,7 +10,7 @@ class App extends Component {
           <CustomNavBar />
           <Route exact path='/' render={() => <div>Hello</div>} />
           <Route path='/random' render={() => <div>Random</div>} />
-          <Route path='/favorites' render={() => <div>Favorites Sdfsadf</div>} />
+          <Route path='/favorites' render={() => <div>Favorites</div>} />
         </div>
       </Router>
     )
