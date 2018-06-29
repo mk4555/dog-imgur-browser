@@ -1,4 +1,4 @@
-export default function manageFavorites (state = {
+export default function FavoritesReducer (state = {
   favorites: []
 }, action) {
   switch (action.type) {
