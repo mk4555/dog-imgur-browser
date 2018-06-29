@@ -1,4 +1,4 @@
-export default function manageImages (state = {
+export default function ImagesReducer (state = {
   images: []
 }, action) {
   switch (action.type) {
