@@ -8,7 +8,6 @@ const initialState = {
 export default function ImagesReducer (state = initialState, action) {
   switch (action.type) {
     case FETCH_IMAGES:
-      console.log("Hello")
       return {
         ...state,
         images: action.payload
