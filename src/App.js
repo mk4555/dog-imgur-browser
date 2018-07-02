@@ -6,6 +6,10 @@ import { Provider } from 'react-redux';
 import store from './store'
 
 class App extends Component {
+  componentDidMount() {
+    console.log(store.getState());
+    console.log("HELLO")
+  }
   render() {
     return (
       <Provider store={store}>
@@ -21,5 +25,6 @@ class App extends Component {
     )
   }
 }
+
 
 export default App;

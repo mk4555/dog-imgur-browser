@@ -1,14 +1,21 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { loadImages, fetchImages } from '../actions/images';
+import { fetchImages } from '../actions/imagesActions';
 import ImagesList from '../components/ImagesList';
 
 class ImagesListContainer extends Component {
+  // componentWillMount() {
+  //   if (this.props.images.length === 0) {
+  //     this.props.fetchImages();
+  //   }
+  //   fetch('https://jsonplaceholder.typicode.com/photos')
+  //     .then(res => res.json())
+  //     .then(data => this.setState({images: data}));
+  // }
+
   componentWillMount() {
-    fetch('https://jsonplaceholder.typicode.com/photos')
-      .then(res => res.json())
-      .then(data => this.setState({images: data}));
+    this.props.fetchImages();
   }
 
   render(){
@@ -19,7 +26,8 @@ class ImagesListContainer extends Component {
 }
 
 function mapStateToProps(state) {
-  return {images: state.images}
+  return {images: state.images.images}
 }
 
-export default connect(mapStateToProps, {loadImages, fetchImages})(ImagesListContainer);
+
+export default connect(mapStateToProps, { fetchImages })(ImagesListContainer);

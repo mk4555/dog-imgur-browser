@@ -1,6 +1,5 @@
 import React from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
-import styles from '../styles/Home.css';
 import ImagesListContainer from '../containers/ImagesListContainer';
 
 const Home = (props) =>
