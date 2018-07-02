@@ -1,10 +1,10 @@
-import { CombineReducers } from 'redux';
-import ImagesReducer from './reducers/ImagesReducer';
-import FavoritesReducer from './reducers/FavoritesReducer';
+import { combineReducers } from 'redux';
+import ImagesReducer from './ImagesReducer.js';
+import FavoritesReducer from './FavoritesReducer';
 
-const rootReducer = CombineReducers({
-  images: ImagesReducer
-  // favorites: FavoritesReducer
+const rootReducer = combineReducers({
+  images: ImagesReducer,
+  favorites: FavoritesReducer
 });
 
 export default rootReducer;
