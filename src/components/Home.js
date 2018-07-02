@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
-import styles from '../styles/Home.css'
-import ImagesList from './ImagesList'
+import styles from '../styles/Home.css';
+import ImagesListContainer from '../containers/ImagesListContainer';
 
 const Home = (props) =>
   <Grid>
@@ -9,7 +9,7 @@ const Home = (props) =>
       <Col xs={18} md={12}>
         <h1>Welcome to Imgur Browser!</h1>
       </Col>
-      <ImagesList />
+      <ImagesListContainer />
     </Row>
 
   </Grid>;
