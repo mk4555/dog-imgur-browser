@@ -1,10 +1,15 @@
-export default function ImagesReducer (state = {
+const initialState = {
+  loading: false,
   images: []
-}, action) {
+}
+
+export default function ImagesReducer (state = initialState, action) {
   switch (action.type) {
+    case 'FETCH_IMAGES':
+      return {loading: false, images: action.payload}
     case 'LOAD_IMAGES':
       return Object.assign({}, state, {
-        images: state.images.concat(action.image)
+        loading: true
       });
     default:
       return state;
