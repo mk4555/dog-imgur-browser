@@ -14,9 +14,17 @@ class ImagesListContainer extends Component {
   }
 
   render(){
-    return(
-      <ImagesList images={this.props.images} />
-    )
+    if (this.props.images.data === undefined) {
+      return (
+        <div>
+          LOADING!
+        </div>
+      )
+    } else {
+      return(
+        <ImagesList images={this.props.images} />
+      )
+    }
   }
 }
 

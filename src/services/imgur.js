@@ -11,5 +11,5 @@ const request = fetchival(apiBase, {
 
 export function searchGallery(section = 'hot', sort = 'viral', page = 0) {
 
-  return request('gallery/' + section + '/' + sort + '/' + page).get();
+  return request(`gallery/${section}/${sort}/${page}`).get();
 }
