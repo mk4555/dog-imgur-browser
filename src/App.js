@@ -6,12 +6,12 @@ import { Provider } from 'react-redux';
 import store from './store';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as actions from './actions/imagesActions.js';
+import { fetchImages, loadImages }from './actions/imagesActions.js';
 
 class App extends Component {
   componentDidMount() {
     if (this.props.images.length == 0) {
-      this.props.actions.fetchImages()
+      this.props.fetchImages()
     }
   }
   render() {
@@ -31,12 +31,8 @@ class App extends Component {
 }
 
 function mapStateToProps(state) {
-  return (images: state.images.images)
-}
-
-function mapDispatchToProps(dispatch) {
-  return {actions: bindActionCreators(actions, dispatch)}
+  return {images: state.images.images}
 }
 
 
-export const WrapperApp = connect(mapStateToProps, mapDispatchToProps)(App)
+export const WrapperApp = connect(mapStateToProps, { fetchImages, loadImages })(App)
