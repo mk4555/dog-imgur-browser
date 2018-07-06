@@ -6,6 +6,13 @@ import ImagesList from '../components/ImagesList';
 import { searchGallery } from '../services/imgur';
 
 class ImagesListContainer extends Component {
+
+  componentWillMount() {
+    if (this.props.images.length == 0) {
+      this.props.fetchImages()
+    }
+  }
+
   render(){
     return(
       <ImagesList images={this.props.images} />

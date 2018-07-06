@@ -9,11 +9,7 @@ import { bindActionCreators } from 'redux';
 import { fetchImages, loadImages }from './actions/imagesActions.js';
 
 class App extends Component {
-  componentDidMount() {
-    if (this.props.images.length == 0) {
-      this.props.fetchImages()
-    }
-  }
+  
   render() {
     return (
       <div className="App">
