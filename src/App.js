@@ -3,12 +3,20 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import CustomNavBar from './components/CustomNavBar'
 import Home from './components/Home'
 import { Provider } from 'react-redux';
-import store from './store'
+import store from './store';
+import {connect} from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as actions from './actions/imagesActions.js';
 
 class App extends Component {
+  componentDidMount() {
+    if (this.props.images.length == 0) {
+      this.props.actions.fetchImages()
+    }
+  }
   render() {
     return (
-      <Provider store={store}>
+      <div className="App">
         <Router>
           <div>
             <CustomNavBar />
@@ -17,10 +25,18 @@ class App extends Component {
             <Route path='/favorites' render={() => <div>Favorites</div>} />
           </div>
         </Router>
-      </Provider>
+      </div>
     )
   }
 }
 
+function mapStateToProps(state) {
+  return (images: state.images.images)
+}
 
-export default App;
+function mapDispatchToProps(dispatch) {
+  return {actions: bindActionCreators(actions, dispatch)}
+}
+
+
+export const WrapperApp = connect(mapStateToProps, mapDispatchToProps)(App)
