@@ -4,7 +4,7 @@ import Image from './Image'
 
 class ImagesList extends React.Component {
   render() {
-    const imgs = this.props.images.data.map(image => (
+    const imgs = this.props.images.data.items.map(image => (
       <Image key={image.id} image={image} />
     ));
     return (

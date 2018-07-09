@@ -9,7 +9,6 @@ const request = fetchival(apiBase, {
   }
 });
 
-export function searchGallery(section = 'hot', sort = 'viral', page = 0) {
-
-  return request(`gallery/${section}/${sort}/${page}`).get();
+export function searchGallery(tag = 'dog', sort = 'viral', page = 0) {
+  return request(`gallery/t/${tag}/${sort}/day/${page}`).get();
 }
