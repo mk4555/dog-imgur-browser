@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import CustomNavBar from './components/CustomNavBar'
 import Home from './components/Home'
+import Random from './components/Random'
 import { Provider } from 'react-redux';
 import store from './store';
 import {connect} from 'react-redux';
@@ -9,7 +10,7 @@ import { bindActionCreators } from 'redux';
 import { fetchImages, loadImages }from './actions/imagesActions.js';
 
 class App extends Component {
-  
+
   render() {
     return (
       <div className="App">
@@ -17,7 +18,7 @@ class App extends Component {
           <div>
             <CustomNavBar />
             <Route exact path='/' component={Home}/>
-            <Route path='/random' render={() => <div>Random</div>} />
+            <Route path='/random' component={Random} />
             <Route path='/favorites' render={() => <div>Favorites</div>} />
           </div>
         </Router>

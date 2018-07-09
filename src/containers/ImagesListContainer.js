@@ -17,7 +17,7 @@ class ImagesListContainer extends Component {
     if (this.props.images.data === undefined) {
       return (
         <div>
-          LOADING!
+          LOADING!...
         </div>
       )
     } else {
