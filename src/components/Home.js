@@ -6,7 +6,7 @@ const Home = (props) =>
   <Grid>
     <Row className="show-grid">
       <Col xs={18} md={12}>
-        <h1>Welcome to Imgur Browser!</h1>
+        <h1>Welcome to Imgur Dog Browser!</h1>
       </Col>
       <ImagesListContainer />
     </Row>

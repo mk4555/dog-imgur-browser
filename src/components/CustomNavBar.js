@@ -6,7 +6,7 @@ const CustomNavBar = () =>
   <Navbar default collapseOnSelect>
     <Navbar.Header>
       <Navbar.Brand>
-        <Link to='/'>Imgur-Browser</Link>
+        <Link to='/'>Imgur-Dog-Browser</Link>
       </Navbar.Brand>
       <Navbar.Toggle />
     </Navbar.Header>
