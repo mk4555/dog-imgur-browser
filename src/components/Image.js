@@ -5,14 +5,17 @@ import fetch from 'isomorphic-fetch';
 
 class Image extends Component {
   imgCover() {
-    return '//imgur.com/' + this.props.image.cover + '.jpg'
+    if (this.props.image.cover) {
+      return '//imgur.com/' + this.props.image.cover + '.jpg'
+    }
+    return this.props.image.link
   }
 
   render(){
     return(
         <Col xs={6} md={4}>
           <h3>{this.props.image.title}</h3>
-          <Imgur src={this.imgCover()} alt='Imgur' responsive/>
+          <Imgur src={this.imgCover()} alt='Imgur' thumbnail/>
         </Col>
     )
   }
