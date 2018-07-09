@@ -15,7 +15,9 @@ class Image extends Component {
     return(
         <Col xs={6} md={4}>
           <h3>{this.props.image.title}</h3>
-          <Imgur src={this.imgCover()} alt='Imgur' thumbnail/>
+          <a href={this.props.image.link}>
+            <Imgur src={this.imgCover()} alt='Imgur' thumbnail/>
+          </a>
         </Col>
     )
   }
