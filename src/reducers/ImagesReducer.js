@@ -17,6 +17,11 @@ export default function ImagesReducer (state = initialState, action) {
       return Object.assign({}, state, {
         loading: true
       });
+    case RANDOM_IMAGE:
+      return Object.assign({}, state, {
+        image: action.payload,
+        loading: false
+      })
     default:
       return state;
   }
