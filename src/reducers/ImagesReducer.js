@@ -1,9 +1,16 @@
-import { FETCH_IMAGES, LOAD_IMAGES } from '../actions/types'
+import { FETCH_IMAGES, LOAD_IMAGES, FETCH_RANDOM } from '../actions/types'
 
 const initialState = {
   images: [],
   image: {},
   loading: false
+}
+
+function randomImage(images) {
+  console.log("START")
+  console.log(images);
+  console.log(images.images.data[Math.floor(Math.random() * images.images.data.length)]);
+  console.log("END")
 }
 
 export default function ImagesReducer (state = initialState, action) {
@@ -17,9 +24,9 @@ export default function ImagesReducer (state = initialState, action) {
       return Object.assign({}, state, {
         loading: true
       });
-    case RANDOM_IMAGE:
+    case FETCH_RANDOM:
       return Object.assign({}, state, {
-        image: action.payload,
+        image: randomImage(action.payload),
         loading: false
       })
     default:
