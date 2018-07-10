@@ -24,9 +24,10 @@ class RandomImageContainer extends Component {
 }
 
 function mapStateToProps(state) {
+  console.log(state)
   return {
     ...state,
-    image: state.images.images
+    image: state.images.image
   }
 }
 

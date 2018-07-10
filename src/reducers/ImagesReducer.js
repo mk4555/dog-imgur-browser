@@ -7,10 +7,7 @@ const initialState = {
 }
 
 function randomImage(images) {
-  console.log("START")
-  console.log(images);
-  console.log(images.images.data[Math.floor(Math.random() * images.images.data.length)]);
-  console.log("END")
+  return images.data.items[Math.floor(Math.random() * images.data.items.length)]
 }
 
 export default function ImagesReducer (state = initialState, action) {
