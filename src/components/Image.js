@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 import { Image as Imgur } from 'react-bootstrap'
-import fetch from 'isomorphic-fetch';
 
 class Image extends Component {
   imgCover() {

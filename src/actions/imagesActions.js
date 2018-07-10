@@ -1,4 +1,3 @@
-import fetch from 'isomorphic-fetch';
 import { FETCH_IMAGES, LOAD_IMAGES, FETCH_RANDOM } from './types'
 import { searchGallery } from '../services/imgur'
 

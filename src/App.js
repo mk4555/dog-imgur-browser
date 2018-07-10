@@ -3,10 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import CustomNavBar from './components/CustomNavBar'
 import Home from './components/Home'
 import Random from './components/Random'
-import { Provider } from 'react-redux';
-import store from './store';
 import {connect} from 'react-redux';
-import { bindActionCreators } from 'redux';
 import { fetchImages, loadImages }from './actions/imagesActions.js';
 
 class App extends Component {

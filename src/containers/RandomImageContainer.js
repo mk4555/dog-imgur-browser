@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Image from '../components/Image';
 import { Button } from 'react-bootstrap'
 import styles from '../styles/Random.css'
+import { Row, Col } from 'react-bootstrap';
 
 class RandomImageContainer extends Component {
   handleClick = (e) => {
@@ -11,10 +12,25 @@ class RandomImageContainer extends Component {
     this.props.fetchRandomImage();
   }
 
+  componentWillMount() {
+    this.props.fetchRandomImage()
+  }
+
   render() {
+    if (this.props.loading === true) {
+      return (
+        <div>
+          LOADING!
+        </div>
+      )
+    }
     return(
       <div className={styles.main}>
-        <Image image={this.props.image} />
+        <Row>
+          <Col xs={18} md={12}>
+            <Image image={this.props.image} />
+          </Col>
+        </Row>
         <Button bsStyle="primary" bsSize="large" onClick={this.handleClick}>
           Random Image!
         </Button>
