@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 import Image from '../components/Image';
 import { Button } from 'react-bootstrap'
 import styles from '../styles/Random.css'
-import { Row, Col } from 'react-bootstrap';
-
+import { Grid, Row, Col } from 'react-bootstrap';
+import Center from 'react-center'
 class RandomImageContainer extends Component {
   handleClick = (e) => {
     e.preventDefault();
@@ -25,16 +25,18 @@ class RandomImageContainer extends Component {
       )
     }
     return(
-      <div className={styles.main}>
+      <Grid className={styles.main}>
+        <Center>
+          <Image image={this.props.image} />
+        </Center>
         <Row>
           <Col xs={18} md={12}>
-            <Image image={this.props.image} />
+            <Button bsStyle="primary" bsSize="large" onClick={this.handleClick}>
+              Random Image!
+            </Button>
           </Col>
         </Row>
-        <Button bsStyle="primary" bsSize="large" onClick={this.handleClick}>
-          Random Image!
-        </Button>
-      </div>
+      </Grid>
     )
   }
 }

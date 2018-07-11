@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
 import ImagesListContainer from '../containers/ImagesListContainer';
-
+import '../styles/Home.css';
 const Home = (props) =>
   <Grid>
     <Row className="show-grid">
