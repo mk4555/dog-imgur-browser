@@ -20,7 +20,8 @@ export function fetchRandomImage() {
     dispatch({
       type: LOAD_IMAGES
     })
-    return searchGallery(undefined,undefined,0).then(data => dispatch({
+    let random = Math.floor(Math.random() * 20)
+    return searchGallery(undefined,undefined, random).then(data => dispatch({
       type: FETCH_RANDOM,
       payload: data
     }))
