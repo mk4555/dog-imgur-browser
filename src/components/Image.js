@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Col } from 'react-bootstrap';
+import { Col, Button } from 'react-bootstrap';
 import { Image as Imgur } from 'react-bootstrap'
+import Center from 'react-center'
 
 class Image extends Component {
   imgCover() {
@@ -17,6 +18,9 @@ class Image extends Component {
           <a href={this.props.image.link}>
             <Imgur src={this.imgCover()} alt='Imgur' thumbnail/>
           </a>
+          <Center>
+            <Button bsStyle="info">Add</Button>
+          </Center>
         </Col>
     )
   }
