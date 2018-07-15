@@ -11,6 +11,11 @@ class Image extends Component {
     return this.props.image.link
   }
 
+  handleClick = (event) => {
+    event.preventDefault();
+    // this.props.
+  }
+
   render(){
     return(
         <Col xs={6} md={4}>
@@ -19,7 +24,7 @@ class Image extends Component {
             <Imgur src={this.imgCover()} alt='Imgur' thumbnail/>
           </a>
           <Center>
-            <Button bsStyle="info">Add</Button>
+            <Button bsStyle="info" onClick={this.handleClick}>Add</Button>
           </Center>
         </Col>
     )
