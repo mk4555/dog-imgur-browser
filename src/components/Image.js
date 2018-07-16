@@ -11,10 +11,9 @@ class Image extends Component {
     return this.props.image.link
   }
 
-  handleClick = (event) => {
-    event.preventDefault();
-    // this.props.
-  }
+  // handleClick = (event) => {
+  //   event.preventDefault();
+  // }
 
   render(){
     return(
