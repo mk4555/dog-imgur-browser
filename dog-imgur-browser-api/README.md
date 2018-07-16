@@ -5,20 +5,16 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+# GET api/favorites
 
-* System dependencies
+# GET api/favorites/1
 
-* Configuration
+# Dog Model
 
-* Database creation
+# Title
 
-* Database initialization
+# Cover
 
-* How to run the test suite
+# Image url
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Description?..
