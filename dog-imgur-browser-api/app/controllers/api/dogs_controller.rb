@@ -1,5 +1,5 @@
 class Api::DogsController < ApplicationController
-  before_action :set_dog, only [:show, :destroy]
+  before_action :set_dog, only: [:show, :destroy]
 
   def index
     render json: Dog.all

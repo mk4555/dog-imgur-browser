@@ -3,10 +3,15 @@ const initialState = {
 }
 export default function FavoritesReducer (state = initialState, action) {
   switch (action.type) {
-    case 'ADD_IMAGE':
+    case 'FETCH_FAVORITES':
       return Object.assign({}, state, {
-        favorites: state.favorites.concat(action.image)
-      });
+        favorites: action.payload,
+        loading: false
+      })
+    case 'LOAD_FAVORITES':
+      return Object.assign({}, state, {
+        favorites:action.payload
+      })
     default:
       return state;
   }
