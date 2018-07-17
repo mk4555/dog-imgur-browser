@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Col, Button } from 'react-bootstrap';
 import { Image as Imgur } from 'react-bootstrap'
 import Center from 'react-center'
+import styles from '../styles/Image.css'
 
 class Image extends Component {
   imgCover() {
@@ -17,10 +18,10 @@ class Image extends Component {
 
   render(){
     return(
-        <Col xs={6} md={4}>
+        <Col xs={6} md={4} className={styles.column}>
           <h3>{this.props.image.title}</h3>
           <a href={this.props.image.link}>
-            <Imgur src={this.imgCover()} alt='Imgur' thumbnail/>
+            <Imgur className={styles.image} src={this.imgCover()} alt='Imgur' thumbnail/>
           </a>
           <Center>
             <Button bsStyle="info" onClick={this.handleClick}>Add</Button>

@@ -6,6 +6,7 @@ import { Button } from 'react-bootstrap'
 import styles from '../styles/Random.css'
 import { Grid, Row, Col } from 'react-bootstrap';
 import Center from 'react-center'
+
 class RandomImageContainer extends Component {
   handleClick = (e) => {
     e.preventDefault();
