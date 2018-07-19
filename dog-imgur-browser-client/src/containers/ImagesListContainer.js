@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Pager } from 'react-bootstrap';
+import { Pager, ProgressBar } from 'react-bootstrap';
 import { fetchImages, fetchNextPage, fetchPreviousPage } from '../actions/imagesActions';
 import { addToFavorites } from '../actions/favoritesActions';
 import ImagesList from '../components/ImagesList';
+import styles from '../styles/Image.css'
+import Center from 'react-center'
 
 class ImagesListContainer extends Component {
   handlePrevious = (event) => {
@@ -26,7 +28,9 @@ class ImagesListContainer extends Component {
     if (this.props.images.data === undefined) {
       return (
         <div>
-          LOADING!...
+          <Center>
+            <ProgressBar active now={100} className={styles.progress}/>
+          </Center>
         </div>
       )
     } else {

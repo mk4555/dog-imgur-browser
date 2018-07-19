@@ -6,3 +6,7 @@
 :local(.column) {
   height: 600px;
 }
+
+:local(.progress) {
+  width: 30%;
+}
