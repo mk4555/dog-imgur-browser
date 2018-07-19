@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import CustomNavBar from './components/CustomNavBar'
 import Home from './components/Home'
-import Random from './components/Random'
+import RandomImageContainer from './containers/RandomImageContainer'
 import FavoritesContainer from './containers/FavoritesContainer'
 import {connect} from 'react-redux';
 import { fetchImages, loadImages }from './actions/imagesActions.js';
@@ -17,7 +17,7 @@ class App extends Component {
           <div>
             <CustomNavBar />
             <Route exact path='/' component={Home}/>
-            <Route path='/random' component={Random} />
+            <Route path='/random' component={RandomImageContainer} />
             <Route path='/favorites' component={FavoritesContainer} />
           </div>
         </Router>
