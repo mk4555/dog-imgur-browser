@@ -2,6 +2,10 @@
 
 This app is a React-Redux app with a Ruby on Rails API and Imgur API backend. To persist data in Rails API, this app uses PostgreSQL. The purpose of this app is to allow users to browse through thousands of dog photos from Imgur and keep their favorites on a local API without having to log in or make an account on Imgur.
 
+# Walkthrough
+
+Please watch this [Walkthrough](https://drive.google.com/file/d/18-wjKZkdnYGw-RAuI4d0cHsgu0f_OsJW/view?usp=sharing) if you're curious on how this app works.
+
 # Installation
 
 ## API
