@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { Button } from 'react-bootstrap';
 import { Image as Imgur } from 'react-bootstrap'
-import Center from 'react-center'
 import styles from '../styles/Image.css'
 
 class Image extends Component {
