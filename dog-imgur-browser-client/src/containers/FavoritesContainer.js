@@ -4,9 +4,7 @@ import { fetchFavorites } from '../actions/favoritesActions';
 import FavoritesList from '../components/FavoritesList';
 class FavoritesContainer extends Component {
   componentWillMount() {
-    if (this.props.favorites.length === 0) {
-      this.props.fetchFavorites();
-    }
+    this.props.fetchFavorites();
   }
 
   render() {

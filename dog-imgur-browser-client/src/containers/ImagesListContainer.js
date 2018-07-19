@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Pager } from 'react-bootstrap';
 import { fetchImages, fetchNextPage, fetchPreviousPage } from '../actions/imagesActions';
+import { addToFavorites } from '../actions/favoritesActions';
 import ImagesList from '../components/ImagesList';
 
 class ImagesListContainer extends Component {
@@ -35,7 +36,7 @@ class ImagesListContainer extends Component {
             <Pager.Item onClick={this.handlePrevious}>Previous</Pager.Item>
             <Pager.Item onClick={this.handleNext}>Next</Pager.Item>
           </Pager>
-          <ImagesList images={this.props.images} />
+          <ImagesList images={this.props.images} add={this.props.addToFavorites}/>
         </div>
       )
     }
@@ -50,4 +51,4 @@ function mapStateToProps(state) {
 }
 
 
-export default connect(mapStateToProps, { fetchImages, fetchNextPage, fetchPreviousPage })(ImagesListContainer);
+export default connect(mapStateToProps, { fetchImages, fetchNextPage, fetchPreviousPage, addToFavorites })(ImagesListContainer);

@@ -34,6 +34,6 @@ class Api::DogsController < ApplicationController
 
 
   def dog_params
-    params.require(:dog).permit(:cover, :img_url, :img_cover)
+    params.require(:dog).permit(:id, :title, :link, :cover)
   end
 end

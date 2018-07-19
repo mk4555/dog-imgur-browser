@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(version: 20180716235542) do
 
   create_table "dogs", force: :cascade do |t|
     t.string "title"
-    t.string "img_url"
-    t.string "img_cover"
+    t.string "link"
+    t.string "cover"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

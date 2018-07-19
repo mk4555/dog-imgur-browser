@@ -8,12 +8,30 @@ export const addToFavorites = image => {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({image: image})
+      body: JSON.stringify({dog: image})
     })
       .then(response => response.json())
-      .then(image => dispatch())
+      .then(dog => dispatch({
+        type: ADD_IMAGE,
+        payload: dog
+      }))
   }
 }
+
+// export function addToFavorites(image) {
+//   return fetch('/api/dogs', {
+//     method: "POST",
+//     headers: {
+//       'Content-Type': 'application/json'
+//     },
+//     body: JSON.stringify({image: image})
+//   })
+//     .then(res => res.json())
+//     .then(image => dispatch({
+//       type: ADD_IMAGE,
+//       payload: image
+//     }))
+// }
 
 export function fetchFavorites() {
   return function(dispatch) {
