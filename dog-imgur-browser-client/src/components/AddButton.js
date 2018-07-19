@@ -6,7 +6,6 @@ class AddButton extends Component {
 
   handleClick = (event) => {
     event.preventDefault();
-    console.log(this.props.image)
     let image = {
       title: this.props.image.title,
       cover: this.props.image.cover,

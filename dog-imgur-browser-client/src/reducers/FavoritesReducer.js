@@ -20,8 +20,10 @@ export default function FavoritesReducer (state = initialState, action) {
         favorites: state.favorites.concat(action.payload)
       })
     case DELETE_IMAGE:
-      // const favorites =
-      return {favorites: state.favorites.filter(image => image.id !== action.payload.id)}
+      const filtered = state.favorites.filter(image => image.id !== action.payload.id)
+      return Object.assign({}, state, {
+        favorites: filtered
+      })
     default:
       return state;
   }
