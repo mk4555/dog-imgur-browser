@@ -1,4 +1,4 @@
-import { FETCH_FAVORITES, ADD_IMAGE, LOAD_FAVORITES } from '../actions/types';
+import { FETCH_FAVORITES, ADD_IMAGE, LOAD_FAVORITES, DELETE_IMAGE } from '../actions/types';
 
 const initialState = {
   favorites: []
@@ -19,6 +19,11 @@ export default function FavoritesReducer (state = initialState, action) {
       return Object.assign({}, state, {
         favorites: state.favorites.concat(action.payload)
       })
+    case DELETE_IMAGE:
+      // const favorites = 
+      return {
+        favorites: state.favorites.filter(image => image.id !== action.payload.id)
+      }
     default:
       return state;
   }

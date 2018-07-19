@@ -4,3 +4,4 @@ export const FETCH_RANDOM = 'FETCH_RANDOM';
 export const ADD_IMAGE = 'ADD_IMAGE';
 export const FETCH_FAVORITES = 'FETCH_FAVORITES';
 export const LOAD_FAVORITES = 'LOAD_FAVORITES';
+export const DELETE_IMAGE = 'DELETE_IMAGE';

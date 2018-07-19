@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { ProgressBar } from 'react-bootstrap';
-import { fetchFavorites } from '../actions/favoritesActions';
+import { fetchFavorites, deleteFromFavorites } from '../actions/favoritesActions';
 import FavoritesList from '../components/FavoritesList';
 import Center from 'react-center'
 import styles from '../styles/Image.css'
@@ -25,7 +25,7 @@ class FavoritesContainer extends Component {
       return (
         <div>
           <h1>Favorites Images</h1>
-          <FavoritesList favorites={this.props.favorites} />
+          <FavoritesList favorites={this.props.favorites} delete={this.props.deleteFromFavorites} />
         </div>
       )
     }
@@ -41,4 +41,4 @@ function mapStateToProps(state) {
 }
 
 
-export default connect(mapStateToProps, { fetchFavorites })(FavoritesContainer);
+export default connect(mapStateToProps, { fetchFavorites, deleteFromFavorites })(FavoritesContainer);
