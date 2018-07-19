@@ -34,7 +34,7 @@ The app is set up so that it works when the API server is run first before the c
 
 If configured properly, you should be able to see a running API server on http://localhost:3000/api/dogs.
 
-## CLIENT
+## Client
 
 Now, from the same root folder as before, dog-imgur-browser, cd into dog-imgur-browser-client.
 
