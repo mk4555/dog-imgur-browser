@@ -6,12 +6,13 @@ import Random from './components/Random'
 import FavoritesContainer from './containers/FavoritesContainer'
 import {connect} from 'react-redux';
 import { fetchImages, loadImages }from './actions/imagesActions.js';
+import styles from './styles/App.css'
 
 class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className={styles.app}>
         <Router>
           <div>
             <CustomNavBar />
