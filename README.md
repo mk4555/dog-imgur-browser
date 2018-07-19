@@ -55,7 +55,7 @@ If not, make sure the client is running on http://localhost:3001/.
 
 # Contribution
 
-Contact mk4555@nyu.edu for any contribution
+Contact minkimcodes@gmail.com for any contribution
 
 # License
 
