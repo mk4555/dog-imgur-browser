@@ -12,31 +12,14 @@ class Image extends Component {
     return this.props.image.link
   }
 
-  // handleClick = (event) => {
-  //   event.preventDefault();
-  //   console.log(this.props.image)
-  //   let image = {
-  //     title: this.props.image.title,
-  //     cover: this.props.image.cover,
-  //     link: this.props.image.link
-  //   }
-  //   this.props.add(image)
-  //   alert('Added to Favorites!')
-  // }
-
   render(){
     return(
-        // <Col xs={6} md={4} className={styles.column}>
         <div>
           <h3>{this.props.image.title}</h3>
           <a href={this.props.image.link}>
             <Imgur className={styles.image} src={this.imgCover()} alt='Imgur' thumbnail/>
           </a>
         </div>
-          // <Center>
-          //   <Button bsStyle="info" onClick={this.handleClick}>Add</Button>
-          // </Center>
-        // </Col>
     )
   }
 }
