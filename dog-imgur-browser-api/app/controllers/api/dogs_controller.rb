@@ -1,5 +1,5 @@
 class Api::DogsController < ApplicationController
-  before_action :set_dog, only: [:show, :destroy]
+  before_action :set_dog, only: [:show, :destroy, :update]
 
   def index
     render json: Dog.all
@@ -18,6 +18,14 @@ class Api::DogsController < ApplicationController
     render json: @dog
   end
 
+  def update
+    if @dog.update(dog_params)
+      render json: @dog
+    else
+      render json: { message: @dog.errors }, status: 400
+    end
+  end
+
   def destroy
     if @dog.destroy
       render status: 204
@@ -34,6 +42,6 @@ class Api::DogsController < ApplicationController
 
 
   def dog_params
-    params.require(:dog).permit(:id, :title, :link, :cover)
+    params.require(:dog).permit(:id, :title, :link, :cover, :votes)
   end
 end
