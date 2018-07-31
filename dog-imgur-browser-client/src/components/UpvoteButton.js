@@ -38,11 +38,10 @@ class UpvoteButton extends Component {
         Score: {this.props.image.votes}
         </Center>
         <Center>
-        <Button onClick={this.handleClick}>
-          Upvote!
-        </Button>
+          <Button onClick={this.handleClick}>
+            Upvote!
+          </Button>
         </Center>
-
       </div>
     )
   }
