@@ -1,4 +1,4 @@
-import { ADD_IMAGE, LOAD_FAVORITES, FETCH_FAVORITES, DELETE_IMAGE } from './types'
+import { ADD_IMAGE, LOAD_FAVORITES, FETCH_FAVORITES, DELETE_IMAGE, UPVOTE_IMAGE } from './types'
 import fetch from 'isomorphic-fetch';
 
 export const addToFavorites = image => {
@@ -29,6 +29,23 @@ export const deleteFromFavorites = image => {
         }))
     }
 }
+
+export const upvoteImage = image => {
+  return dispatch => {
+    return fetch(`/api/dogs/${image.id}`, {
+          method: "PATCH",
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({dog: image})
+        })
+          .then(response => response.json())
+          .then(image => dispatch({
+            type: UPVOTE_IMAGE,
+            payload: image
+          }))
+      }
+    }
 
 export function fetchFavorites() {
   return function(dispatch) {

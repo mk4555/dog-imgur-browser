@@ -13,22 +13,8 @@ class UpvoteButton extends Component {
   }
 
   handleClick = (event) => {
-    console.log(this.props.image);
     this.props.image.votes += 1;
-    console.log(this.props.image.id);
-    fetch(`/api/dogs/${this.props.image.id}`, {
-          method: "PATCH",
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({dog: this.props.image})
-        })
-          .then(response => {
-            this.setState({
-              votes: this.props.image.votes
-            })
-            alert("updated")
-          })
+    this.props.upvote(this.props.image)
   }
 
   render() {

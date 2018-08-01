@@ -11,7 +11,7 @@ class FavoritesList extends React.Component {
       <Col xs={6} md={4} className={styles.column} key={image.id}>
         <Image image={image} add={this.props.add} className={styles.image}/>
         <DeleteButton image={image} delete={this.props.delete}/>
-        <UpvoteButton image={image}/>
+        <UpvoteButton image={image} upvote={this.props.upvote}/>
       </Col>
     ));
     return (
