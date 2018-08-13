@@ -5,7 +5,6 @@ import Center from 'react-center'
 class UpvoteButton extends Component {
   constructor(props) {
     super(props);
-    console.log(this.props)
     this.state = {
       votes: 0
     };
@@ -13,9 +12,7 @@ class UpvoteButton extends Component {
   }
 
   handleClick = (event) => {
-    console.log(this.props.image);
     this.props.image.votes += 1;
-    console.log(this.props.image.id);
     fetch(`/api/dogs/${this.props.image.id}`, {
           method: "PATCH",
           headers: {
