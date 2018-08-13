@@ -11,6 +11,10 @@ class FavoritesContainer extends Component {
     this.props.fetchFavorites();
   }
 
+  handleClick = () => {
+    this.props.favorites.slice().sort((a,b) => a.votes < b.votes)
+  }
+
   render() {
     if (this.props.favorites === undefined) {
       return (
@@ -25,6 +29,7 @@ class FavoritesContainer extends Component {
       return (
         <div>
           <h1>Favorites Images</h1>
+          <button onClick={this.handleClick}>Filter</button>
           <FavoritesList favorites={this.props.favorites} delete={this.props.deleteFromFavorites} />
         </div>
       )
